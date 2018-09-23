@@ -13,10 +13,3 @@ You can @mention a GitHub username to generate a link to their profile. The resu
 ### Support or Contact
 Having trouble with Pages? Check out our [documentation](https://help.github.com/pages) or [contact support](https://github.com/contact) and we’ll help you sort it out.
 
-<ul>
-  {℅ for post in site.posts ℅}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {℅ endfor ℅}
-</ul>
