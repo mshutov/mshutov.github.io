@@ -2,7 +2,7 @@ title: Mshutov.GitHub.io
 description: 
 google_analytics: UA-46217270-2
 show_downloads: false
-theme: jekyll-theme-minima
+theme: minima
 
 gems:
   - jekyll-mentions
