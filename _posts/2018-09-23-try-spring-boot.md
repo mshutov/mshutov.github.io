@@ -20,4 +20,6 @@ After short time (after deploy finished) you will be able to see result - click 
 
 Now let's go to repository and edit `DemoController.java` located in `src/main/java/com/example/demo`. 
 Replace "Hello world" with your desired string and commit changes to `master`(not a good practice - usually it is better to work in branch and then create a pull request to `master`).
-In Heroku dashboard you will notice that your commit triggered build. After all activity finished in "Activity" tab you can "Open app" again and see changed output.
+In Heroku dashboard you will notice that your commit triggered build (maybe you will have to wait 20-30 seconds). After all activity finished in **Activity** tab you can **Open app** again and see changed output.
+
+As you can see we were able to create simple app working in a cloud that you can change and see results. And you can do that even without PC. 
