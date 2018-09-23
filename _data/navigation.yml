@@ -1,8 +1,2 @@
-# Belongs at: /_data/navigation.yml
-
 - title: Home
-  url: /
-#
-#- title: Group of Things
-#  url: /group/
- 
+  url: / 
