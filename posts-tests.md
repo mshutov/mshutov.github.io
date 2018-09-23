@@ -1,6 +1,6 @@
 ---
 ---
-{%- for post in site.posts:5 -%}
+{%- for post in site.posts limit:2 -%}
  
  [{{ post.title }}]({{ post.url }})
  
