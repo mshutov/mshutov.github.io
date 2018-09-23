@@ -14,10 +14,10 @@ The easiest way to try spring boot is to fork (through GitHub site) [my reposito
 - `DemoController.java` - java class with several annotations that serves requests to `/`
 
 After forking my repo you can go to [Heroku dashboard](https://dashboard.heroku.com) and create new app. 
-Inside that app go to **Deploy** tab and in the **Deployment method** choose and connect to GitHub. Choose your cloned repo.
-After connecting to GitHub, select **Enable automatic deploys** in **Automatic deploys** section. And click **Deploy branch** in next section.
-After short time (after deploy finished) you will be able to go see result - click **Open app** and you will see "Hello world"
+Inside that app go to **Deploy** tab and in the **Deployment method** choose and connect to GitHub. After that choose your cloned repo.
+After connecting to GitHub, select **Enable automatic deploys** in **Automatic deploys** section. And click **Deploy branch** in next section (we need to do this once).
+After short time (after deploy finished) you will be able to see result - click **Open app** and you will see "Hello world"
 
 Now let's go to repository and edit `DemoController.java` located in `src/main/java/com/example/demo`. 
-Replace "Hello world" with your desired string and commit changes to master.
+Replace "Hello world" with your desired string and commit changes to `master`(not a good practice - usually it is better to work in branch and then create a pull request to `master`).
 In Heroku dashboard you will notice that your commit triggered build. After all activity finished in "Activity" tab you can "Open app" again and see changed output.
