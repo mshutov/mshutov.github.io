@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Try spring boot without installing any software
+title: Try Spring Boot without installing any software
 tags: [spring, spring boot, heroku]
 ---
 Required preliminary steps:
@@ -8,7 +8,7 @@ Required preliminary steps:
 - register [Heroku](https://heroku.com) account
 
 Above steps require 3-4 minutes in total.
-The easiest way to try spring boot is to fork (through GitHub site) [my repository](https://github.com/mshutov/demo-web-min) which consists of only 3 files:
+The easiest way to try Spring Boot is to fork (through GitHub site) [my repository](https://github.com/mshutov/demo-web-min) which consists of only 3 files:
 - `pom.xml` - maven project file that contains dependencies and some project details
 - `DemoApplication.java` - java class with single annotation `@SpringBootApplication` and `main` method
 - `DemoController.java` - java class with several annotations that serves requests to `/`
