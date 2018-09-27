@@ -24,3 +24,8 @@ Now add 3 methods for each of our endpoints with specified method and path:
 - `@GetMapping(path = "/{word}") String getTranslation(@PathVariable String word)`
 - `@PostMapping void addTranslation(@RequestParam String word, @RequestParam String meaning)`
 
+Let's discuss these annotations. `*Mapping` marks method as handler for requests with corresponding `HTTP` method. Also it allows specify path - we already specified it for our class, so full path for getTranslation methods is `/translations/{words}`. `{word}` in path allows us to have a method parameter with same name, bu we need to annotate it with `@PathVariable` (we also can change name of variable we capture by adding name='smth' in annotation, e.g. we could use `@GetMapping(path = "/{word}") String getTranslation(@PathVariable(name="word") String term)` and this will work fine).
+
+`@RequestParam` also interesting because allows us to get this params from different places - forms, query params. We also can specify name of param if we want to name our variables using other names).
+
+Now you can commit this changes to branch you are working with or to `master` directrly (`master` is also just a branch but it is usually have a special role)
