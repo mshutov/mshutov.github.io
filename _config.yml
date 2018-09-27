@@ -2,6 +2,7 @@ title: Mshutov.GitHub.io
 description: 
 google_analytics: UA-46217270-2
 show_downloads: false
+show_excerpts: true
 theme: minima
 disqus:
   shortname: mshutov-github-io
