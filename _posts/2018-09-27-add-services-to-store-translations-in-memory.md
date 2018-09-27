@@ -30,3 +30,6 @@ Let's discuss these annotations. `*Mapping` marks method as handler for requests
 `@RequestParam` also interesting because allows us to get this params from different places - forms, query params. We also can specify name of param if we want to name our variables using other names).
 
 Now you can commit this changes to branch you are working with or to `master` directrly (`master` is also just a branch but it is usually have a special role)
+
+Here is my code for this controller:
+<script src="https://gist.github.com/mshutov/d46f6e6d8e98d598edc73b1eb9c5ad4f.js"></script>
