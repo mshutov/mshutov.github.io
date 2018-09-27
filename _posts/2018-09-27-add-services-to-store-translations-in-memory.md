@@ -33,3 +33,6 @@ Now you can commit this changes to branch you are working with or to `master` di
 
 Here is my code for this controller:
 <script src="https://gist.github.com/mshutov/d46f6e6d8e98d598edc73b1eb9c5ad4f.js"></script>
+
+And for service:
+<script src="https://gist.github.com/mshutov/43d210f7d8eae3feac2b20bdaf2edd48.js"></script>
