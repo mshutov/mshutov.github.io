@@ -23,3 +23,5 @@ Replace "Hello world" with your desired string and commit changes to `master`(no
 In Heroku dashboard you will notice that your commit triggered build (maybe you will have to wait 20-30 seconds). After all activity finished in **Activity** tab you can **Open app** again and see changed output.
 
 As you can see we were able to create simple app working in a cloud that you can change and see results. And you can do that even without PC. 
+
+In [next post]({% post_url 2018-09-27-add-services-to-store-translations-in-memory %}) we will add simple functionality to this app - ability to work as a dictionary.
