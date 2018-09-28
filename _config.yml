@@ -11,3 +11,4 @@ googleplus_username: +МихаилШутов
 
 gems:
   - jekyll-mentions
+  - jekyll-sitemap
