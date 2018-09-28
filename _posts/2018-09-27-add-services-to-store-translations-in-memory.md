@@ -100,4 +100,4 @@ public class TranslationService {
 }
 ```
 
-In [next post]({% post_url 2018-09-28-add-real-db-to-store-data %}) we will use add real db (without installing any software as we do in initial post).
+In [next post]({% post_url 2018-09-28-add-real-db-to-store-data %}) we will use real db (without installing any software as we do in initial post).
