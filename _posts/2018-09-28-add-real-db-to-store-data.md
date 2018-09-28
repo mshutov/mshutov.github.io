@@ -2,6 +2,7 @@
 layout: post
 title: Add real DB to store translations
 excerpt_separator: <!--more-->
+last_modified_at: 2018-09-28
 ---
 We have a problem with our app inplementation that uses `ConcurrentHashMap` - it looses all data on app reload.
 To solve this problem we need to add real DB. To avoid installation of any local DB let's continue with approach used in [initial post]({% post_url 2018-09-23-try-spring-boot %}) - let's add a DB to our app in Heroku.
