@@ -7,13 +7,16 @@ last_modified_at: 2018-09-28
 We have a problem with our app inplementation that uses `ConcurrentHashMap` - it looses all data on app reload.
 To solve this problem we need to add real DB. To avoid installation of any local DB let's continue with approach used in [initial post]({% post_url 2018-09-23-try-spring-boot %}) - let's add a DB to our app in Heroku.
 <!--more-->
-You need to open app dashboard and go to `Resources` tab: 
+You need to open app dashboard and go to `Resources` tab:
+
 ![Resources tab](/assets/img/1-Resources-1.png)
 
 In search field (that you see on previous screenshot) type `postgres` and choose proposed variant. You will see popup:
+
 ![Resource provisioning popup](/assets/img/2-Resources-provision.png)
 
 Confirm and you're done:
+
 ![Postgres added to resources](/assets/img/3-Resources-provision-done.png)
 
 Heroku sets all variables that Spring 'searches' so you don't need to set host/port and credentials to use this DB in your app.
