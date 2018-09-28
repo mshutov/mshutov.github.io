@@ -2,6 +2,7 @@
 layout: post
 title: Try Spring Boot without installing any software
 tags: [spring, spring boot, heroku]
+last_modified_at: 2018-09-28
 ---
 Required preliminary steps:
 - register [GitHub](https://github.com) account
