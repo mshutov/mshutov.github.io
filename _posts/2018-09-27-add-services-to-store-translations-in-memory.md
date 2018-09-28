@@ -36,3 +36,5 @@ Here is my code for this controller:
 
 And for service:
 <script src="https://gist.github.com/mshutov/43d210f7d8eae3feac2b20bdaf2edd48.js"></script>
+
+In [next post]({% post_url 2018-09-28-add-real-db-to-store-data %}) we will use add real db (without installing any software as we do in initial post).
