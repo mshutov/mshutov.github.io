@@ -32,9 +32,71 @@ Let's discuss these annotations. `*Mapping` marks method as handler for requests
 Now you can commit this changes to branch you are working with or to `master` directrly (`master` is also just a branch but it is usually have a special role)
 
 Here is my code for this controller:
-<script src="https://gist.github.com/mshutov/d46f6e6d8e98d598edc73b1eb9c5ad4f.js"></script>
+```java
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+
+@RestController
+@RequestMapping(path = "/translations")
+public class TranslationController {
+    private final TranslationService translationService;
+
+    public TranslationController(TranslationService translationService) {
+        this.translationService = translationService;
+    }
+
+    @PostMapping
+    public void createTranslation(@RequestParam String word, @RequestParam String meaning) {
+        translationService.addTranslation(word, meaning);
+    }
+
+    @GetMapping
+    public Map<String, String> getTranslations() {
+        return translationService.findAll();
+    }
+
+    @GetMapping(path = "/{word}")
+    public String getTranslations(@PathVariable String word) {
+        return translationService.findByWord(word).orElse("[No translation]");
+    }
+}
+```
 
 And for service:
-<script src="https://gist.github.com/mshutov/43d210f7d8eae3feac2b20bdaf2edd48.js"></script>
+```java
+package com.example.demo;
+
+import org.springframework.stereotype.Service;
+
+import java.util.Collections;
+import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
+
+@Service
+public class TranslationService {
+    private final ConcurrentHashMap<String, String> translations = new ConcurrentHashMap<>();
+
+    public void addTranslation(String word, String meaning) {
+        translations.put(word, meaning);
+    }
+
+    public Optional<String> findByWord(String word) {
+        return Optional.ofNullable(translations.get(word));
+    }
+
+    public Map<String, String> findAll() {
+        return Collections.unmodifiableMap(translations);
+    }
+}
+```
 
 In [next post]({% post_url 2018-09-28-add-real-db-to-store-data %}) we will use add real db (without installing any software as we do in initial post).
