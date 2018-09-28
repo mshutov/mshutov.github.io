@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Add service to store translations in memory
+last_modified_at: 2018-09-28
 ---
 To dive into Spring Boot and related libraries let's create simple app that could be used as vocabulary.
 Let's add new endpoints for our needs:
