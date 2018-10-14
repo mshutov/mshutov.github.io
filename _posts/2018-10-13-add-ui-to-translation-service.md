@@ -78,7 +78,7 @@ and `footer.mustache`:
 ```{% endraw %}
 Using such includes we can keep actual files with content pretty small and simple.
 Also let's add two more templates:
-- `form.mustache` (will be used to create new translation):
+`form.mustache` (will be used to create new translation):
 {% raw %}```html
 {{> header }}
 <div>
@@ -101,7 +101,7 @@ Also let's add two more templates:
 </div>
 {{> footer }}
 ```{% endraw %}
-- `card.mustache` (to display translation pair):
+and `card.mustache` (to display translation pair):
 {% raw %}```
 {{> header }}
 <div class="card">
