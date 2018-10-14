@@ -86,7 +86,7 @@ and `footer.mustache`:
 Using such includes we can keep actual files with content pretty small and simple.
 Also let's add two more templates
 - `form.mustache` (will be used to create new translation):
-```
+```html
 {% raw %}
 {{> header }}
 <div>
