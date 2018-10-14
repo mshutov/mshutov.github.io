@@ -7,7 +7,6 @@ theme: minima
 disqus:
   shortname: mshutov-github-io
 github_username: mshutov
-googleplus_username: +МихаилШутов
 
 gems:
   - jekyll-mentions
