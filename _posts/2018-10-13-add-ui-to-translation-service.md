@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Adding UI to our service
-tags: [spring, spring boot, heroku]
-last_modified_at: 2018-10-13
+tags: [spring, spring boot]
+last_modified_at: 2018-10-14
 ---
 In this post we are going to achieve 2 goals:
 - add UI (using mustache)
