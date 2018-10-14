@@ -175,9 +175,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
-/**
- * @author Mikhail Shutov
- */
 @Controller
 @RequestMapping(path = "/")
 public class TranslationWebController {
@@ -224,3 +221,5 @@ public class TranslationWebController {
     }
 }
 ```
+
+Now you should have a working app with navigation between all pages and ability to add new translations.
