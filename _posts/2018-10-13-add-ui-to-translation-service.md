@@ -8,6 +8,7 @@ In this post we are going to achieve 2 goals:
 - add UI (using mustache)
 - add method to choose random translation
 
+.h2 Add UI
 For UI let's use mustache - it is easy to use template engine. To add it to our project we need to add one dependency:
 ```xml
 <dependency>
@@ -15,7 +16,7 @@ For UI let's use mustache - it is easy to use template engine. To add it to our 
     <artifactId>spring-boot-starter-mustache</artifactId>
 </dependency>
 ```
-As everything in spring this starter has nice defaults:
+As everything in Spring this starter has nice defaults:
 ```
 spring.mustache.prefix=classpath:/templates/
 spring.mustache.suffix=.mustache
@@ -23,8 +24,8 @@ spring.mustache.suffix=.mustache
 
 So let's create folder `templates` under `resources`. Three things that we need to know about mustache syntax for now:
 - `{{ var }}` is to replace this with value of `var`
-- `{{> header }}` is to replace this with content of file header.mustache. We will use it to keep actual pages simpler
-- `{{# var }} smth {{/var}}` - will output smth only if var is true (or not null)
+- `{{> header }}` is to replace this with content of file `header.mustache`. We will use it to keep actual pages simpler
+- `{{# var }} smth {{/var}}` - will output `smth` only if `var` is `true` (or not `null`)
 Full documentation on syntax you can find at http://mustache.github.io/mustache.5.html
 
 We previously created RestController, but now let's create controller for UI - `TranslationWebController` and add dependency to `TranslationService` through costructor.
@@ -145,3 +146,24 @@ public String meaning(@PathVariable String word, Model model) {
 }
 ```
 Nothing to explain here after previous explanations and posts.
+
+.h2 Add method to choose random translation
+There are different approaches to select random record from DB. I am going to use quite simple - receive all ids from DB and then choose random using `java.util.Random` - we can ititialize it once in a field. Then just receive that record from DB. Because our record is quite small (and we doesn't have a lot of records) we can just select random from `findAll`. Choosing random from list is quite simple:
+```java
+private TranslationPair chooseRandomFromList(List<TranslationPair> elements) {
+    return elements.get(random.nextInt(elements.size()));
+}
+```
+
+So, now we can just call such method from `TranslationService`, fill Model and use `card` template. In such case we will see `/random` in address bar in browser. Let's make it more insteresting - so it displays `/word/{word}`, where `{word}` is actually selected random word. So here how it looks like:
+```java
+@GetMapping(path = "random")
+public RedirectView random() {
+    return new RedirectView(
+            translationService.random()
+                    .map(TranslationPair::getWord)
+                    .map(w -> "/word/" + w)
+                    .orElse("/"));
+}
+```
+`RedirectView` is used to say Spring which method to call. We can specify here any method (actually, `path` that it serves). As you can see if TranslationService successfully selected random then we use selected word to redirect, otherwise - navigate to home page.
