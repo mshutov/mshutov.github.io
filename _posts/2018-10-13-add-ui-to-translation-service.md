@@ -23,9 +23,9 @@ spring.mustache.suffix=.mustache
 ```
 
 So let's create folder `templates` under `resources`. Three things that we need to know about mustache syntax for now:
-- `{{ var }}` is to replace this with value of `var`
-- `{{> header }}` is to replace this with content of file `header.mustache`. We will use it to keep actual pages simpler
-- `{{# var }} smth {{/var}}` - will output `smth` only if `var` is `true` (or not `null`)
+- {% raw %}`{{ var }}`{% endraw %} is to replace this with value of `var`
+- {% raw %}`{{> header }}`{% endraw %} is to replace this with content of file `header.mustache`. We will use it to keep actual pages simpler
+- {% raw %}`{{# var }} smth {{/var}}`{% endraw %} - will output `smth` only if `var` is `true` (or not `null`)
 Full documentation on syntax you can find at http://mustache.github.io/mustache.5.html
 
 We previously created RestController, but now let's create controller for UI - `TranslationWebController` and add dependency to `TranslationService` through costructor.
@@ -41,6 +41,7 @@ what also interesting here is that we return `"index"` - this is a name of view 
 According to defaults there should be a file name `index.mustache` under `templates`.
 Here it is:
 ```
+{% raw %}
 {{> header }}
 <div>
 <h1>Demo</h1>
@@ -48,9 +49,11 @@ Here it is:
 <div><a href="/random">random</a></div>
 </div>
 {{> footer }}
+{% endraw %}
 ```
 And here content of `header.mustache`:
 ```
+{% raw %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -68,19 +71,23 @@ And here content of `header.mustache`:
 <body>
 <div class="container mt-2">
     <div class="row justify-content-md-center">
+{% endraw %}
 ```
 and `footer.mustache`:
 ```
+{% raw %}
 </div>
 </div>
 </body>
 </html>
+{% endraw %}
 ```
 
 Using such includes we can keep actual files with content pretty small and simple.
 Also let's add two more templates
 - `form.mustache` (will be used to create new translation):
 ```
+{% raw %}
 {{> header }}
 <div>
 <h1>Create new translation</h1>
@@ -101,9 +108,11 @@ Also let's add two more templates
 <div><a href="/">Home</a></div>
 </div>
 {{> footer }}
+{% endraw %}
 ```
 - `card.mustache` (to display translation pair):
 ```
+{% raw %}
 {{> header }}
 <div class="card">
     <div class="card-body">
@@ -115,6 +124,7 @@ Also let's add two more templates
     </div>
 </div>
 {{> footer }}
+{% endraw %}
 ```
 
 As you can see in `card.mustache` I have links to `/new` and `/random`. First one will open a form. Here is a method in our new controller:
