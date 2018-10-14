@@ -8,7 +8,7 @@ In this post we are going to achieve 2 goals:
 - add UI (using mustache)
 - add method to choose random translation
 
-.h2 Add UI
+## Add UI
 For UI let's use mustache - it is easy to use template engine. To add it to our project we need to add one dependency:
 ```xml
 <dependency>
@@ -147,7 +147,7 @@ public String meaning(@PathVariable String word, Model model) {
 ```
 Nothing to explain here after previous explanations and posts.
 
-.h2 Add method to choose random translation
+## Add method to choose random translation
 There are different approaches to select random record from DB. I am going to use quite simple - receive all ids from DB and then choose random using `java.util.Random` - we can ititialize it once in a field. Then just receive that record from DB. Because our record is quite small (and we doesn't have a lot of records) we can just select random from `findAll`. Choosing random from list is quite simple:
 ```java
 private TranslationPair chooseRandomFromList(List<TranslationPair> elements) {
