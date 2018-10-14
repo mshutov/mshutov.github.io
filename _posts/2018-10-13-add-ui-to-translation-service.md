@@ -23,9 +23,9 @@ spring.mustache.suffix=.mustache
 ```
 
 So let's create folder `templates` under `resources`. Three things that we need to know about mustache syntax for now:
-- `\{\{ var \}\}` is to replace this with value of `var`
-- `\{\{\> header \}\}` is to replace this with content of file `header.mustache`. We will use it to keep actual pages simpler
-- `\{\{\# var \}\} smth \{\{/var\}\}` - will output `smth` only if `var` is `true` (or not `null`)
+- `{{ var }}` is to replace this with value of `var`
+- `{{> header }}` is to replace this with content of file `header.mustache`. We will use it to keep actual pages simpler
+- `{{# var }} smth {{/var}}` - will output `smth` only if `var` is `true` (or not `null`)
 Full documentation on syntax you can find at http://mustache.github.io/mustache.5.html
 
 We previously created RestController, but now let's create controller for UI - `TranslationWebController` and add dependency to `TranslationService` through costructor.
