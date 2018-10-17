@@ -2,7 +2,7 @@
 layout: post
 title: Adding UI to our service
 tags: [spring, spring boot]
-last_modified_at: 2018-10-14
+last_modified_at: 2018-10-17
 ---
 In this post we are going to achieve 2 goals:
 - add UI (using mustache)
@@ -86,18 +86,18 @@ Also let's add two more templates:
 <form action="new" method="POST">
     <div class="form-group">
         <label for="word">Word:</label>
-        <input type="text" id="word" name="word"/>
+        <input type="text" id="word" name="word" class="form-control" />
     </div>
     <div class="form-group">
-        <label for="meaning">meaning:</label>
-        <input type="text" id="meaning" name="meaning"/>
+        <label for="meaning">Meaning:</label>
+        <input type="text" id="meaning" name="meaning" class="form-control" />
     </div>
-    <input type="submit" value="Create"/>
+    <button type="submit" class="btn btn-primary">Create</button>
 </form>
 {{#word}}
-    <div><a href="/word/{{word}}">{{word}}</a></div>
+    <div class="mt-2"><a href="/word/{{word}}">{{word}}</a></div>
 {{/word}}
-<div><a href="/">Home</a></div>
+<div class="mt-2"><a href="/">Home</a></div>
 </div>
 {{> footer }}
 ```{% endraw %}
